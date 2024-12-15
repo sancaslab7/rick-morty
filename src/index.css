@@ -147,3 +147,36 @@ body {
     width: 150px;
   }
 }
+
+.filter-container {
+  display: flex; /* Usamos flexbox */
+  flex-direction: column; /* Alineamos los elementos en una columna */
+  align-items: flex-end; /* Alinea los elementos hacia la derecha */
+  margin: 10px 0;
+}
+
+.search-bar {
+  margin: 10px 0;
+  padding: 8px;
+  width: 100%;
+  max-width: 300px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  float: right;
+}
+
+.filter-advanced select {
+  margin: 5px 0;
+  padding: 6px;
+  width: 100%;
+  max-width: 170px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  background-color: #fff;
+  margin-bottom: 0; /* Eliminamos margen inferior en el select */
+}
+
+.filter-advanced {
+  display: flex; /* Flexbox para los select dentro del filtro */
+  gap: 10px; /* Espacio entre los select */
+}
