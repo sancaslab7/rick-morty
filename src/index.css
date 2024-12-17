@@ -180,3 +180,18 @@ body {
   display: flex; /* Flexbox para los select dentro del filtro */
   gap: 10px; /* Espacio entre los select */
 }
+
+/* Revisar */
+.btn-favorite {
+  background-color: #ffc107; /* Botón amarillo */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #000;
+  font-weight: bold;
+}
+
+.btn-favorite:hover {
+  background-color: #ffca2c;
+}

@@ -4,7 +4,10 @@ import { useState } from "react";
 export default function Characters(props) {
 
     // Podremos usar 'characters' y 'setCharacters' gracias a que los pasamos como props
-    const { characters, setCharacters } = props;
+    const { characters, setCharacters, toggleFavorite, favorites } = props;
+
+    // Función para verificar si un personaje es favorito
+    const isFavorite = (character) => favorites.some((fav) => fav.id === character.id);
 
     // Función para resetear el estado de 'characters' a null
     const resetCharacters = () => {
@@ -63,6 +66,7 @@ export default function Characters(props) {
             {/* Contenedor de personajes */}
             <div className="container-characters">
                 {/* Mapeo de los personajes para mostrarlos en pantalla */}
+                
                 {filteredCharacters.map((character, index) => (
                     <div className='character-container' key={index}>
                         <div> 
@@ -95,6 +99,10 @@ export default function Characters(props) {
                                 <span className="text-grey">Especie: </span>
                                 <span>{character.species}</span>
                             </p>
+                            {/* Botón para manejar favoritos */}
+                            <button className="btn-favorite" onClick={() => toggleFavorite(character)}>
+                                {isFavorite(character) ? 'Eliminar de favoritos' : 'Añadir a favoritos'}
+                            </button>
                         </div>                       
                     </div>
                 ))}
